@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savoria — Experience exquisite fine dining with our curated menu featuring starters, main courses, pizzas, burgers, desserts and premium beverages. Order online now.">
+    <title>Savoria — Fine Dining &amp; Gourmet Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/savoria_logo_unique.svg" alt="Savoria Logo" class="nav-logo" id="nav-logo">
+                <div class="brand-text">
+                    <h1 class="brand-name">SAVORIA</h1>
+                    <span class="brand-tagline">Fine Dining &amp; Gourmet Experience</span>
+                </div>
+            </div>
+            <div class="nav-search" id="nav-search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search dishes, cuisines..." autocomplete="off">
+                <button class="search-clear" id="search-clear" aria-label="Clear search">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="search-suggestions" id="search-suggestions" aria-live="polite"></div>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-btn cart-btn" id="cart-toggle" aria-label="Open cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+                <button class="nav-btn mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════ HERO SECTION ═══════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="images/hero_banner.png" alt="Restaurant Ambiance" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Premium Dining Experience</span>
+            </div>
+            <h2 class="hero-title">Crafted with Passion,<br><span class="text-gradient">Served with Love</span></h2>
+            <p class="hero-subtitle">Discover our handpicked selection of gourmet dishes, freshly prepared by award-winning chefs using the finest ingredients from around the world.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="150">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Dishes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Chefs</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="12">0</span>
+                    <span class="stat-label">Awards</span>
+                </div>
+            </div>
+            <a href="#menu" class="hero-cta">
+                <span>Explore Menu</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CATEGORY TABS ═══════════════ -->
+    <section class="categories-section" id="menu">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-utensils"></i> Our Menu</span>
+            <h2 class="section-title">Explore Our <span class="text-gradient">Culinary Collection</span></h2>
+            <p class="section-desc">From appetizing starters to indulgent desserts — discover dishes that tell a story</p>
+        </div>
+        <div class="categories-wrapper">
+            <button class="cat-scroll-btn cat-scroll-left" id="cat-scroll-left" aria-label="Scroll categories left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="categories-track" id="categories-track">
+                <button class="category-tab active" data-category="all" id="cat-all">
+                    <div class="cat-icon"><i class="fas fa-th-large"></i></div>
+                    <span>All Dishes</span>
+                    <div class="cat-count" id="count-all">95</div>
+                </button>
+                <button class="category-tab" data-category="starters" id="cat-starters">
+                    <div class="cat-icon"><i class="fas fa-seedling"></i></div>
+                    <span>Starters</span>
+                    <div class="cat-count" id="count-starters">35</div>
+                </button>
+                <button class="category-tab" data-category="mains" id="cat-mains">
+                    <div class="cat-icon"><i class="fas fa-drumstick-bite"></i></div>
+                    <span>Main Course</span>
+                    <div class="cat-count" id="count-mains">26</div>
+                </button>
+                <button class="category-tab" data-category="nonveg" id="cat-nonveg">
+                    <div class="cat-icon"><i class="fas fa-pepper-hot"></i></div>
+                    <span>Non-Veg</span>
+                    <div class="cat-count" id="count-nonveg">35</div>
+                </button>
+                <button class="category-tab" data-category="breads" id="cat-breads">
+                    <div class="cat-icon"><i class="fas fa-bread-slice"></i></div>
+                    <span>Breads</span>
+                    <div class="cat-count" id="count-breads">8</div>
+                </button>
+                <button class="category-tab" data-category="pizza" id="cat-pizza">
+                    <div class="cat-icon"><i class="fas fa-pizza-slice"></i></div>
+                    <span>Pizza</span>
+                    <div class="cat-count" id="count-pizza">6</div>
+                </button>
+                <button class="category-tab" data-category="burgers" id="cat-burgers">
+                    <div class="cat-icon"><i class="fas fa-hamburger"></i></div>
+                    <span>Burgers</span>
+                    <div class="cat-count" id="count-burgers">5</div>
+                </button>
+                <button class="category-tab" data-category="desserts" id="cat-desserts">
+                    <div class="cat-icon"><i class="fas fa-ice-cream"></i></div>
+                    <span>Desserts</span>
+                    <div class="cat-count" id="count-desserts">9</div>
+                </button>
+                <button class="category-tab" data-category="beverages" id="cat-beverages">
+                    <div class="cat-icon"><i class="fas fa-mug-hot"></i></div>
+                    <span>Beverages</span>
+                    <div class="cat-count" id="count-beverages">6</div>
+                </button>
+            </div>
+            <button class="cat-scroll-btn cat-scroll-right" id="cat-scroll-right" aria-label="Scroll categories right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="cuisine-filters" id="cuisine-filters">
+            <button class="cuisine-tab active" data-cuisine="all">All Cuisines</button>
+            <button class="cuisine-tab" data-cuisine="Indian"><span>Indian</span><span class="cuisine-count">35</span></button>
+            <button class="cuisine-tab" data-cuisine="Chinese"><span>Chinese</span><span class="cuisine-count">35</span></button>
+            <button class="cuisine-tab" data-cuisine="Italian">Italian</button>
+            <button class="cuisine-tab" data-cuisine="Continental">Continental</button>
+            <button class="cuisine-tab" data-cuisine="Tandoor">Tandoor</button>
+        </div>
+    </section>
+
+    <!-- ═══════════════ MENU GRID ═══════════════ -->
+    <section class="menu-section">
+        <div class="menu-container">
+            <!-- Active filters bar -->
+            <div class="active-filters" id="active-filters" style="display:none;">
+                <div class="filter-info">
+                    <i class="fas fa-filter"></i>
+                    <span id="filter-text">Showing all dishes</span>
+                </div>
+                <button class="clear-filters" id="clear-filters">
+                    <i class="fas fa-times"></i> Clear all
+                </button>
+            </div>
+
+            <!-- Menu Sections -->
+            <div class="menu-sections" id="menu-sections">
+                <!-- Cuisine sections inserted via JS -->
+            </div>
+
+            <!-- No results -->
+            <div class="no-results" id="no-results" style="display:none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>No dishes found</h3>
+                <p>Try a different search or browse our categories</p>
+                <button class="btn-reset" id="btn-reset">Show All Dishes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CART SIDEBAR ═══════════════ -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <div class="cart-title-group">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Your Order</h3>
+            </div>
+            <button class="cart-close" id="cart-close" aria-label="Close cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <!-- Empty state -->
+            <div class="cart-empty" id="cart-empty">
+                <div class="cart-empty-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h4>Your cart is empty</h4>
+                <p>Explore our menu and add your favorite dishes</p>
+            </div>
+            <!-- Cart items -->
+            <div class="cart-items" id="cart-items"></div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display:none;">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%)</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">
+                <i class="fas fa-credit-card"></i>
+                <span>Proceed to Checkout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ═══════════════ TOAST NOTIFICATION ═══════════════ -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer" id="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,85.3C672,96,768,96,864,85.3C960,75,1056,53,1152,48C1248,43,1344,53,1392,58.7L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/savoria_logo_unique.svg" alt="Savoria" class="footer-logo">
+                    <h3>SAVORIA</h3>
+                    <p>Where every meal tells a story. Experience culinary artistry at its finest with flavors that transport you around the world.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#menu">Our Menu</a>
+                    <a href="#">Reservations</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Opening Hours</h4>
+                    <div class="hours-row"><span>Mon - Fri</span><span>11am - 11pm</span></div>
+                    <div class="hours-row"><span>Saturday</span><span>10am - 12am</span></div>
+                    <div class="hours-row"><span>Sunday</span><span>10am - 10pm</span></div>
+                    <div class="hours-row highlight"><span>Happy Hour</span><span>4pm - 7pm</span></div>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> 157 Marine Drive, Mumbai 400020</a>
+                    <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 (98765) 43210</a>
+                    <a href="mailto:hello@savoria.com"><i class="fas fa-envelope"></i> hello@savoria.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Savoria. All rights reserved. Crafted with <i class="fas fa-heart"></i> for food lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ BACK TO TOP ═══════════════ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
