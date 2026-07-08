@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BROfit - Join the Elite</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Left Side Image Panel -->
+        <div class="image-panel">
+            <div class="overlay"></div>
+            <div class="brand-info">
+                <h1 class="logo">BRO<span>fit</span></h1>
+                <p class="tagline">Push your limits. Redefine your aesthetic.</p>
+            </div>
+        </div>
+
+        <!-- Right Side Form Panel -->
+        <div class="form-panel">
+            <div class="form-wrapper">
+                <h2>Create Account</h2>
+                <p class="subtitle">Join the elite fitness community today.</p>
+
+                <!-- Social Logins -->
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <svg viewBox="0 0 24 24"><path fill="#fff" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Sign in with Google
+                    </button>
+                    <button class="social-btn apple-btn">
+                        <svg viewBox="0 0 24 24"><path fill="#fff" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.15 2.95.92 3.67 2.14-3.18 1.96-2.64 5.92.51 7.1-1.07 1.83-2.12 3.25-2.83 3.77zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                        Sign in with Apple
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>or sign up with email</span>
+                </div>
+
+                <form id="signupForm" novalidate>
+                    <div id="signupStep1">
+                        <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Full Name</label>
+                    </div>
+
+                    <div class="input-group" id="emailGroup">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                        <span class="email-status" id="emailStatus"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="dob" required placeholder=" " onfocus="(this.type='date')" onblur="(this.type=this.value?'date':'text')">
+                        <label for="dob">Date of Birth</label>
+                    </div>
+
+                    <div class="gender-selection">
+                        <span class="gender-label">Gender</span>
+                        <div class="gender-options">
+                            <input type="radio" id="gender-male" name="gender" value="male" required>
+                            <label for="gender-male" class="gender-chip">Male</label>
+                            
+                            <input type="radio" id="gender-female" name="gender" value="female">
+                            <label for="gender-female" class="gender-chip">Female</label>
+                            
+                            <input type="radio" id="gender-others" name="gender" value="others">
+                            <label for="gender-others" class="gender-chip">Others</label>
+                        </div>
+                    </div>
+
+                    <div id="step1Error" class="error-text" style="display: none; color: var(--error-color); margin-bottom: 1rem; text-align: center; font-size: 0.9rem;"></div>
+
+                    <button type="button" class="submit-btn" id="nextStepBtn">Next Step</button>
+                    
+                    <p class="login-link">Already a member? <a href="#" id="showLoginBtn">Log in here</a></p>
+                </div>
+
+                <div id="signupStep2" style="display: none;">
+                    <button type="button" class="back-btn" id="backStepBtn" style="margin-bottom: 1.5rem; width: auto; padding: 0.5rem 1.5rem;">Back</button>
+
+                    <div class="input-group password-group">
+                        <input type="password" id="password" required placeholder=" ">
+                        <label for="password">Password</label>
+                        <button type="button" class="toggle-password" data-target="password">
+                            <svg viewBox="0 0 24 24" class="eye-icon"><path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                        </button>
+                    </div>
+                    
+                    <div class="password-strength-container">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                        <span class="strength-text" id="strengthText"></span>
+                    </div>
+
+                    <div class="password-suggestion">
+                        <button type="button" id="generatePasswordBtn">Generate Secure Password</button>
+                    </div>
+
+                    <div class="input-group password-group">
+                        <input type="password" id="confirmPassword" required placeholder=" ">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <button type="button" class="toggle-password" data-target="confirmPassword">
+                            <svg viewBox="0 0 24 24" class="eye-icon"><path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                        </button>
+                        <span class="match-status" id="matchStatus"></span>
+                    </div>
+
+                    <div id="step2Error" class="error-text" style="display: none; color: var(--error-color); margin-bottom: 1rem; text-align: center; font-size: 0.9rem;"></div>
+
+                    <button type="submit" class="submit-btn">Create Account</button>
+                    
+                    <p class="login-link">Already a member? <a href="#" id="showLoginBtn2">Log in here</a></p>
+                </div>
+            </form>
+            </div>
+
+            <!-- Login Panel -->
+            <div class="login-wrapper" id="loginWrapper" style="display: none;">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Log in to continue your fitness journey.</p>
+
+                <!-- Social Logins -->
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <svg viewBox="0 0 24 24"><path fill="#fff" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Log in with Google
+                    </button>
+                    <button class="social-btn apple-btn">
+                        <svg viewBox="0 0 24 24"><path fill="#fff" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.15 2.95.92 3.67 2.14-3.18 1.96-2.64 5.92.51 7.1-1.07 1.83-2.12 3.25-2.83 3.77zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                        Log in with Apple
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>or log in with email</span>
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <div class="input-group">
+                        <input type="email" id="loginEmail" required placeholder=" ">
+                        <label for="loginEmail">Email Address</label>
+                    </div>
+
+                    <div class="input-group password-group">
+                        <input type="password" id="loginPassword" required placeholder=" ">
+                        <label for="loginPassword">Password</label>
+                        <button type="button" class="toggle-password" data-target="loginPassword">
+                            <svg viewBox="0 0 24 24" class="eye-icon"><path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                        </button>
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="loginSubmitBtn">Log In</button>
+                    
+                    <p class="login-link">Don't have an account? <a href="#" id="showSignupBtn">Sign up here</a></p>
+                </form>
+            </div>
+
+            <!-- OTP Verification Panel -->
+            <div class="otp-wrapper" id="otpWrapper" style="display: none;">
+                <h2>Verify email</h2>
+                <p class="subtitle" id="otpSubtitle">We sent a 6-digit code to <strong></strong>.</p>
+                
+                <div class="demo-mode-banner" id="demoBanner">
+                    Demo mode — your code is <span id="demoOtpCode"></span>
+                </div>
+
+                <div class="otp-input-group">
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" required>
+                    <input type="text" class="otp-input" maxlength="1" inputmode="numeric" required>
+                </div>
+                
+                <div class="otp-error" id="otpError"></div>
+
+                <p class="resend-link">Didn't get it? <a href="#" id="resendOtp">Resend code</a></p>
+
+                <div class="otp-actions">
+                    <button type="button" class="back-btn" id="backToSignup">Back</button>
+                    <button type="button" class="submit-btn otp-submit" id="verifyOtpBtn">Verify email</button>
+                </div>
+            </div>
+
+            <!-- Onboarding Preferences Panel -->
+            <div class="onboarding-wrapper" id="onboardingWrapper" style="display: none;">
+                <h2 id="onboardingTitle">Your Goals</h2>
+                <p class="subtitle">Personalize your BROfit journey.</p>
+                
+                <div class="onboarding-section">
+                    <label>Daily Step Goal</label>
+                    <div class="range-display">
+                        <span id="stepGoalValue">10,000</span> <small>steps</small>
+                    </div>
+                    <input type="range" id="stepGoal" min="2000" max="30000" step="1000" value="10000" class="custom-range">
+                    <div class="range-labels">
+                        <span>2k</span>
+                        <span>30k</span>
+                    </div>
+                </div>
+
+                <div class="onboarding-section">
+                    <label>Favorite Activities (Select up to 3)</label>
+                    <div class="activity-chips" id="activityChips">
+                        <button type="button" class="activity-chip">🏋️ Gym</button>
+                        <button type="button" class="activity-chip">🏃 Running</button>
+                        <button type="button" class="activity-chip">🧘 Yoga</button>
+                        <button type="button" class="activity-chip">🚴 Cycling</button>
+                        <button type="button" class="activity-chip">🏊 Swimming</button>
+                        <button type="button" class="activity-chip">🏀 Sports</button>
+                        <button type="button" class="activity-chip">🥊 Boxing</button>
+                        <button type="button" class="activity-chip">🧗 Climbing</button>
+                    </div>
+                </div>
+                
+                <div class="onboarding-actions">
+                    <button type="button" class="submit-btn onboarding-submit" id="finishSignupBtn">Complete Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
